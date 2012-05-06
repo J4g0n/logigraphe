@@ -57,7 +57,7 @@ int puiss(int base,int exposant)
 
 grille charge_grille() {
   FILE *fichier = NULL;
-  fichier = fopen(("bin/grille"), ("r"));
+  fichier = fopen(("grille.txt"), ("r"));
   int i,k,j,n,m;
   grille G;
   if (fichier==NULL) {
