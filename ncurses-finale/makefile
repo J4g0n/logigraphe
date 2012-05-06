@@ -12,8 +12,8 @@ vpath %.c ./src
 vpath %.h ./include
 vpath %.o ./obj
 
-main:	main.o grille.o interaction.o serie.o image.o
-	$(CC) $(CFLAGS) -o $@ obj/main.o obj/interaction.o obj/serie.o obj/grille.o obj/image.o -lncurses
+main:	main.o grille.o interaction.o serie.o 
+	$(CC) $(CFLAGS) -o $@ obj/main.o obj/interaction.o obj/serie.o obj/grille.o -lncurses
 	mv main bin/.
 grille.o: grille.c grille.h  
 	$(CC) -c $(CFLAGS) $<
@@ -21,9 +21,6 @@ grille.o: grille.c grille.h
 serie.o: serie.c grille.h 
 	$(CC) -c $(CFLAGS) $<
 	mv serie.o obj/.
-image.o: image.c image.h
-	$(CC) -c $(CFLAGS) $<
-	mv image.o obj/.
 interaction.o: interaction.c grille.h interaction.h 
 	$(CC) -c $(CFLAGS) $< 
 	mv interaction.o obj/.
